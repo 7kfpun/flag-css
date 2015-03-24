@@ -1,0 +1,22 @@
+{
+  "name": "flag-css",
+  "description": "Flag css",
+  "version": "1.0.0",
+  "keywords": [],
+  "homepage": "https://7kfpun.github.io/flag-css/",
+  "dependencies": {},
+  "devDependencies": {},
+  "license": ["MIT"],
+  "main": [
+    "./css/*.css",
+    "./flags/*"
+  ],
+  "ignore": [
+    "*/.*",
+    "*.json",
+    "src",
+    "*.html",
+    "*.txt",
+    "*.md"
+  ]
+}

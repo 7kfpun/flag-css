@@ -1,0 +1,90 @@
+.flag-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.3333333333333333em;
+  line-height: 1em;
+}
+.flag:before {
+  content: "\00a0";
+}
+.flag-2x {
+  width: 2.66666666666em;
+  line-height: 2em;
+}
+.flag-3x {
+  width: 3.99999999999em;
+  line-height: 3em;
+}
+.flag-4x {
+  width: 5.33333333333em;
+  line-height: 4em;
+}
+.flag-5x {
+  width: 6.66666666666em;
+  line-height: 5em;
+}
+.flag-6x {
+  width: 7.99999999999em;
+  line-height: 6em;
+}
+.flag-7x {
+  width: 9.33333333333em;
+  line-height: 7em;
+}
+.flag-8x {
+  width: 10.6666666666em;
+  line-height: 8em;
+}
+.flag-9x {
+  width: 11.9999999999em;
+  line-height: 9em;
+}
+.flag-10x {
+  width: 13.3333333333em;
+  line-height: 10em;
+}
+.flag-rotate-90 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+.flag-rotate-180 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.flag-rotate-270 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+.flag-flip-horizontal {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+.flag-flip-vertical {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+:root .flag-rotate-90,
+:root .flag-rotate-180,
+:root .flag-rotate-270,
+:root .flag-flip-horizontal,
+:root .flag-flip-vertical {
+  filter: none;
+}
