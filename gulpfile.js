@@ -1,6 +1,9 @@
 'use strict';
 
 var gulp = require('gulp');
+var escape = require('html-escape');
+var fs = require('fs');
+
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'del', 'imagemin-*']
@@ -73,7 +76,7 @@ gulp.task('flags', ['svg', 'png']);
 ///////////////////////////////////////////////////////
 
 gulp.task('css', function() {
-  return gulp.src('./css/*.css')
+  gulp.src('./css/*.css')
   .pipe($.cssmin())
   .pipe($.concat('flag-css.min.css'))
   .pipe(gulp.dest('./dist/'))
@@ -111,6 +114,19 @@ gulp.task('build', ['css', 'flags'], function() {
 
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
+});
+
+gulp.task('templates', function(){
+  fs.readFile('./README.md', {encoding: 'utf-8', flag: 'rs'}, function(e, data) {
+    if (e) {
+      return console.log(e);
+    }
+    gulp.src(['index-tpl.html'])
+      .pipe($.replace(/__README__/g, escape(data.replace(/\n/g, '\\n'))))
+      .pipe($.rename({basename: 'index'}))
+      .pipe(gulp.dest('./'))
+      .pipe($.size());
+  });
 });
 
 gulp.task('run', function() {
