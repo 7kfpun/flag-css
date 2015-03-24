@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp');
-var escape = require('html-escape');
 var fs = require('fs');
 
 
@@ -122,7 +121,7 @@ gulp.task('templates', function(){
       return console.log(e);
     }
     gulp.src(['index-tpl.html'])
-      .pipe($.replace(/__README__/g, escape(data.replace(/\n/g, '\\n'))))
+      .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
       .pipe($.rename({basename: 'index'}))
       .pipe(gulp.dest('./'))
       .pipe($.size());
