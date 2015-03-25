@@ -10,8 +10,8 @@ var $ = require('gulp-load-plugins')({
 
 var path = {
   src: {
-    less: './src/less/**/*.less',
-    svg: './src/flags/**/*.svg'
+    less: './less/**/*.less',
+    svg: './flags/**/*.svg'
   },
   dest: {
     flags: {
@@ -77,7 +77,7 @@ gulp.task('flags', ['svg', 'png']);
 // building /////////////////////////////////////////////
 
 gulp.task('less-merge', function() {
-  gulp.src(['./src/less/**/variable.less', './src/less/**/flag-core.less', './src/less/**/flag-list.less'])
+  gulp.src(['./less/**/variable.less', './less/**/flag-core.less', './less/**/flag-list.less'])
   .pipe($.stripCssComments())
   .pipe($.concat('flag-css.less'))
   .pipe(gulp.dest('./dist/'))
@@ -93,7 +93,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('css-min', function() {
-  gulp.src('./src/less/**/flag-css.less')
+  gulp.src('./less/**/flag-css.less')
   .pipe($.less({}))
   .pipe($.minifyCss({}))
   .pipe($.rename({suffix: '.min'}))
