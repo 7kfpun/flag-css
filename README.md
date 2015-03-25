@@ -1,6 +1,6 @@
 # Flag-css
 
-CSS for SVG country flags with PNG failback. See the [demo](http://7kfpun.github.io/flag-css/).
+CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github.io/flag-css/).
 
 > As a backend developer, I prefer **ISO_3166-1 alpha-3**.
 

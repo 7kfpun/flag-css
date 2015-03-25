@@ -9,7 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Starter Template for Bootstrap</title>
+    <title>Flag-css - CSS for SVG country flags with PNG fallback.</title>
 
     <!-- Bootstrap core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +23,8 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
   </head>
 
   <body>
@@ -32,7 +34,6 @@
     <div class="container" ng-controller="MainController">
 
       <div>
-        <script src="https://rawgit.com/chjj/marked/master/lib/marked.js"></script>
         <div id="content"></div>
         <script>
           document.getElementById('content').innerHTML = marked('__README__');
