@@ -33,6 +33,11 @@
     <div class="container" ng-controller="MainController">
 
       <div>
+        <!--[if lt IE 9]>
+          <h1>Flag-css</h1>
+          <h2>CSS for SVG country flags with PNG fallback.</h2>
+          <a href="ie.html">click here for legacy browser</a>
+        <![endif]-->
         <div id="content"></div>
         <script>
           document.getElementById('content').innerHTML = marked('__README__');
@@ -45,7 +50,7 @@
         <hr>
 
         <p>
-          <input type="text" placeholder="Search country" ng-model="input" typeahead="country for country in countries | filter:$viewValue | limitTo:8" class="form-control" autofocus>
+          <input type="text" placeholder="Search country" ng-model="input" typeahead="country for country in countries | filter:$viewValue | limitTo:8" class="form-control">
         </p>
 
         <br/>
