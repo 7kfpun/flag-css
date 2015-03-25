@@ -21,6 +21,8 @@ var path = {
   }
 };
 
+// preparing /////////////////////////////////////////////
+
 gulp.task('download', function() {
   var flagSource = require('./flag_source.json');
   Object.keys(flagSource).forEach(function(key) {
@@ -72,7 +74,7 @@ gulp.task('png', ['svg2png', 'svg2png-small']);
 
 gulp.task('flags', ['svg', 'png']);
 
-///////////////////////////////////////////////////////
+// building /////////////////////////////////////////////
 
 // gulp.task('css', function() {
 //   gulp.src('./css/*.css')
@@ -82,14 +84,34 @@ gulp.task('flags', ['svg', 'png']);
 //   .pipe($.size());
 // });
 
-gulp.task('license', function() {
-  gulp.src(['./dist/**/*.js', './dist/**/*.css', './dist/**/*.less'])
-  .pipe($.license('MIT', {organization: 'kf (7kfpun@gmail.com)'}))
+gulp.task('less-merge', function() {
+  gulp.src(['./less/**/variable.less', './less/**/flag-core.less', './less/**/flag-list.less'])
+  .pipe($.stripCssComments())
+  .pipe($.concat('flag-css.less'))
   .pipe(gulp.dest('./dist/'))
   .pipe($.size());
 });
 
-gulp.task('zip', ['zip-png', 'zip-nopng']);
+gulp.task('css', function() {
+  gulp.src('./less/**/flag-css.less')
+  .pipe($.less({}))
+  .pipe($.stripCssComments())
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
+});
+
+gulp.task('css-min', function() {
+  gulp.src('./less/**/flag-css.less')
+  .pipe($.less({}))
+  .pipe($.minifyCss({}))
+  .pipe($.rename({suffix: '.min'}))
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
+});
+
+gulp.task('compile', ['less-merge', 'css', 'css-min']);
+
+// zipping //////////////////////////////////////////////
 
 gulp.task('zip-png', function() {
   gulp.src(['./dist/**/*', '!./dist/**/*.zip'])
@@ -105,17 +127,9 @@ gulp.task('zip-nopng', function() {
   .pipe($.size());
 });
 
-gulp.task('clean', function(done) {
-  $.del(['.tmp', 'dist'], done);
-});
+gulp.task('zip', ['zip-png', 'zip-nopng']);
 
-gulp.task('build', ['less', 'flags'], function() {
-  gulp.start('license');
-});
-
-gulp.task('default', ['clean'], function() {
-  gulp.start('build');
-});
+/////////////////////////////////////////////////////////
 
 gulp.task('templates', function(){
   var opts = {
@@ -137,6 +151,25 @@ gulp.task('templates', function(){
   });
 });
 
+gulp.task('license', function() {
+  gulp.src(['./dist/**/*.js', './dist/**/*.css', './dist/**/*.less'])
+  .pipe($.license('MIT', {organization: 'kf (7kfpun@gmail.com)'}))
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
+});
+
+gulp.task('clean', function(done) {
+  $.del(['.tmp', 'dist'], done);
+});
+
+gulp.task('build', ['flags', 'compile', 'zip', 'templates'], function() {
+  gulp.start('license');
+});
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('build');
+});
+
 gulp.task('run', function() {
   gulp.src('./')
   .pipe($.webserver({
@@ -144,29 +177,4 @@ gulp.task('run', function() {
     // directoryListing: true,
     open: true
   }));
-});
-
-gulp.task('less-merge', function() {
-  gulp.src(['./less/**/variable.less', './less/**/flag-core.less', './less/**/flag-list.less'])
-  .pipe($.stripCssComments())
-  .pipe($.concat('flag-css.less'))
-  .pipe(gulp.dest('./dist/'))
-  .pipe($.size());
-});
-
-gulp.task('less', function() {
-  gulp.src('./less/**/flag-css.less')
-  .pipe($.less({}))
-  .pipe($.stripCssComments())
-  .pipe(gulp.dest('./dist/'))
-  .pipe($.size());
-});
-
-gulp.task('less-min', function() {
-  gulp.src('./less/**/flag-css.less')
-  .pipe($.less({}))
-  .pipe($.minifyCss({}))
-  .pipe($.rename({suffix: '.min'}))
-  .pipe(gulp.dest('./dist/'))
-  .pipe($.size());
 });
