@@ -8,7 +8,7 @@
   "devDependencies": {},
   "license": ["MIT"],
   "main": [
-    "./dist/**.*"
+    "./dist/**/*"
   ],
   "ignore": [
     "*.html",
@@ -16,6 +16,7 @@
     "*.json",
     "*.md",
     "*.txt",
+    "*.zip",
     "*/.*",
     "flags",
     "less"

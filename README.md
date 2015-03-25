@@ -9,7 +9,13 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
   - Respect flag's original ratio
   - Flag-css CSS, LESS, and Sass files are licensed under the MIT License
 
-### Usage
+## install
+
+    bower:
+
+        bower install --save flag-svg-collection
+
+## Usage
 
 For using the flags inline with text add the classes `.flag` with `.flag-xxx` or `.flag-xx` (where `xxx` is the
 [ISO 3166-1-alpha-3] or [ISO 3166-1-numeric] and xx is the [ISO 3166-1-alpha-2] of a country) to an empty `<span>`. Example:
@@ -18,7 +24,7 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
     <span class="flag flag-hk"></span>
     <span class="flag flag-344"></span>
 
-#### Sizing
+### Sizing
 
     <span class="flag flag-hkg flag-2x"></span>
     <span class="flag flag-hkg flag-3x"></span>
@@ -27,7 +33,7 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
                       ⋮
     <span class="flag flag-hkg flag-10x"></span>
 
-#### Rotating and flipping
+### Rotating and flipping
 
     <span class="flag flag-hkg flag-rotate-90"></span>
     <span class="flag flag-hkg flag-rotate-180"></span>
@@ -35,13 +41,13 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
     <span class="flag flag-hkg flag-flip-horizontal"></span>
     <span class="flag flag-hkg flag-flip-vertical"></span>
 
-### Todo's
+## Todo's
 
   - Failback with **.png**
   - LESS, Sass and Scss are coming
   - 3×4 flag ratio available
 
-### License
+## License
 
 MIT
 
@@ -49,7 +55,7 @@ MIT
 [ISO 3166-1-alpha-2]:http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 [ISO 3166-1-numeric]:http://en.wikipedia.org/wiki/ISO_3166-1_numeric
 
-### Development
+## Development
 
 Ubuntu:
 
