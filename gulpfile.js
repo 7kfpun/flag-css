@@ -89,7 +89,9 @@ gulp.task('license', function() {
   .pipe($.size());
 });
 
-gulp.task('zip', function() {
+gulp.task('zip', ['zip-png', 'zip-nopng']);
+
+gulp.task('zip-png', function() {
   gulp.src(['./dist/**/*', '!./dist/**/*.zip'])
   .pipe($.zip('archive.zip'))
   .pipe(gulp.dest('./dist/'))
@@ -98,7 +100,7 @@ gulp.task('zip', function() {
 
 gulp.task('zip-nopng', function() {
   gulp.src(['./dist/**/*', '!./dist/**/*.zip', '!./dist/**/*.png'])
-  .pipe($.zip('archive.zip'))
+  .pipe($.zip('archive-nopng.zip'))
   .pipe(gulp.dest('./dist/'))
   .pipe($.size());
 });
