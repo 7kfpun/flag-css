@@ -11,7 +11,7 @@ var $ = require('gulp-load-plugins')({
 var path = {
   src: {
     less: './less/**/*.less',
-    svg: './flags/**/*.svg'
+    svg: './dist/**/*.svg'
   },
   dest: {
     flags: {
@@ -23,22 +23,17 @@ var path = {
 
 // preparing /////////////////////////////////////////////
 
-gulp.task('download', function() {
+gulp.task('svg', function() {
   var flagSource = require('./flag_source.json');
   Object.keys(flagSource).forEach(function(key) {
     var url = flagSource[key];
     if (url) {
       $.download(url)
         .pipe($.rename({basename: key}))
-        .pipe(gulp.dest('./src/flags/'));
+        .pipe(gulp.dest(path.dest.flags.svg))
+        .pipe($.size());
     }
   });
-});
-
-gulp.task('svg', function() {
-  return gulp.src(path.src.svg)
-  .pipe(gulp.dest(path.dest.flags.svg))
-  .pipe($.size());
 });
 
 gulp.task('svg2png', function() {
