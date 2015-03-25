@@ -9,52 +9,31 @@
   background-repeat: no-repeat;
   position: relative;
   display: inline-block;
-  width: 1.33333333333em;
-  line-height: 1em;
+  width: @flag-width;
+  line-height: @flag-line-height;
 }
 .flag:before {
   content: "\00a0";
 }
-.flag-1x {
-  width: 1.33333333333em;
-  line-height: 2em;
+
+.flag-x(@size) {
+  .flag-@{size}x {
+    width: (@flag-width * @size);
+    line-height: (@flag-line-height * @size);
+  }
 }
-.flag-2x {
-  width: 2.66666666666em;
-  line-height: 2em;
-}
-.flag-3x {
-  width: 3.99999999999em;
-  line-height: 3em;
-}
-.flag-4x {
-  width: 5.33333333333em;
-  line-height: 4em;
-}
-.flag-5x {
-  width: 6.66666666666em;
-  line-height: 5em;
-}
-.flag-6x {
-  width: 7.99999999999em;
-  line-height: 6em;
-}
-.flag-7x {
-  width: 9.33333333333em;
-  line-height: 7em;
-}
-.flag-8x {
-  width: 10.6666666666em;
-  line-height: 8em;
-}
-.flag-9x {
-  width: 11.9999999999em;
-  line-height: 9em;
-}
-.flag-10x {
-  width: 13.3333333333em;
-  line-height: 10em;
-}
+
+.flag-x(1);
+.flag-x(2);
+.flag-x(3);
+.flag-x(4);
+.flag-x(5);
+.flag-x(6);
+.flag-x(7);
+.flag-x(8);
+.flag-x(9);
+.flag-x(10);
+
 .flag-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);

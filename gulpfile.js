@@ -74,13 +74,13 @@ gulp.task('flags', ['svg', 'png']);
 
 ///////////////////////////////////////////////////////
 
-gulp.task('css', function() {
-  gulp.src('./css/*.css')
-  .pipe($.cssmin())
-  .pipe($.concat('flag-css.min.css'))
-  .pipe(gulp.dest('./dist/'))
-  .pipe($.size());
-});
+// gulp.task('css', function() {
+//   gulp.src('./css/*.css')
+//   .pipe($.cssmin())
+//   .pipe($.concat('flag-css.min.css'))
+//   .pipe(gulp.dest('./dist/'))
+//   .pipe($.size());
+// });
 
 gulp.task('license', function() {
   gulp.src(['./dist/**/*.js', './dist/**/*.css', './dist/**/*.less'])
@@ -107,7 +107,7 @@ gulp.task('clean', function(done) {
   $.del(['.tmp', 'dist'], done);
 });
 
-gulp.task('build', ['css', 'flags'], function() {
+gulp.task('build', ['less', 'flags'], function() {
   gulp.start('license');
 });
 
@@ -135,4 +135,29 @@ gulp.task('run', function() {
     // directoryListing: true,
     open: true
   }));
+});
+
+gulp.task('less-merge', function() {
+  gulp.src(['./less/**/variable.less', './less/**/flag-core.less', './less/**/flag-list.less'])
+  .pipe($.stripCssComments())
+  .pipe($.concat('flag-css.less'))
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
+});
+
+gulp.task('less', function() {
+  gulp.src('./less/**/flag-css.less')
+  .pipe($.less({}))
+  .pipe($.stripCssComments())
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
+});
+
+gulp.task('less-min', function() {
+  gulp.src('./less/**/flag-css.less')
+  .pipe($.less({}))
+  .pipe($.minifyCss({}))
+  .pipe($.rename({suffix: '.min'}))
+  .pipe(gulp.dest('./dist/'))
+  .pipe($.size());
 });
