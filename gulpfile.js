@@ -124,7 +124,7 @@ gulp.task('zip', ['zip-png', 'zip-nopng']);
 
 /////////////////////////////////////////////////////////
 
-gulp.task('templates', function(){
+gulp.task('html', function(){
   var opts = {
     comments: true,
     conditionals: true,
@@ -135,9 +135,9 @@ gulp.task('templates', function(){
     if (e) {
       return console.log(e);
     }
-    gulp.src(['index-tpl.html'])
+    gulp.src(['*.tpl'])
       .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
-      .pipe($.rename({basename: 'index'}))
+      .pipe($.rename({extname: '.html'}))
       .pipe($.minifyHtml(opts))
       .pipe(gulp.dest('./'))
       .pipe($.size());
@@ -155,7 +155,7 @@ gulp.task('clean', function(done) {
   $.del(['.tmp', 'dist'], done);
 });
 
-gulp.task('build', ['flags', 'compile', 'templates'], function() {
+gulp.task('build', ['flags', 'compile', 'html'], function() {
   gulp.start('license');
   gulp.start('zip');
 });
