@@ -13,7 +13,7 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
 
     bower:
 
-        bower install --save flag-svg-collection
+        bower install --save flag-css
 
 ## Usage
 
