@@ -76,16 +76,15 @@ gulp.task('flags', ['svg', 'png']);
 
 // building /////////////////////////////////////////////
 
-gulp.task('less-merge', function() {
-  gulp.src(['./less/**/variable.less', './less/**/flag-core.less', './less/**/flag-list.less'])
+gulp.task('less', function() {
+  gulp.src('./less/**/*.less')
   .pipe($.stripCssComments())
-  .pipe($.concat('flag-css.less'))
-  .pipe(gulp.dest('./dist/'))
+  .pipe(gulp.dest('./dist/less'))
   .pipe($.size());
 });
 
 gulp.task('css', function() {
-  gulp.src('./src/less/**/flag-css.less')
+  gulp.src('./less/**/flag-css.less')
   .pipe($.less({}))
   .pipe($.stripCssComments())
   .pipe(gulp.dest('./dist/'))
@@ -101,7 +100,14 @@ gulp.task('css-min', function() {
   .pipe($.size());
 });
 
-gulp.task('compile', ['less-merge', 'css', 'css-min']);
+gulp.task('scss',function(){
+  gulp.src('./less/**/*.less')
+  .pipe($.lessToScss())
+  .pipe(gulp.dest('./dist/scss'))
+  .pipe($.size());
+});
+
+gulp.task('compile', ['less', 'css', 'css-min', 'scss']);
 
 // zipping //////////////////////////////////////////////
 
@@ -144,7 +150,7 @@ gulp.task('templates', function(){
 });
 
 gulp.task('license', function() {
-  gulp.src(['./dist/**/*.js', './dist/**/*.css', './dist/**/*.less'])
+  gulp.src(['./dist/**/*.js', './dist/**/*.css', './dist/**/*.less', './dist/**/*.scss'])
   .pipe($.license('MIT', {organization: 'kf (7kfpun@gmail.com)'}))
   .pipe(gulp.dest('./dist/'))
   .pipe($.size());

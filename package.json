@@ -19,6 +19,7 @@
     "gulp-gm": "0.0.7",
     "gulp-imagemin": "^2.2.1",
     "gulp-less": "^3.0.2",
+    "gulp-less-to-scss": "0.0.4",
     "gulp-license": "^1.0.0",
     "gulp-load-plugins": "^0.8.0",
     "gulp-minify-css": "^1.0.0",

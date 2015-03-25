@@ -43,8 +43,6 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
 
 ## Todo's
 
-  - Failback with **.png**
-  - LESS, Sass and Scss are coming
   - 3×4 flag ratio available
 
 ## License
