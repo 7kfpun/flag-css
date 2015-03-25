@@ -118,6 +118,12 @@ gulp.task('default', ['clean'], function() {
 });
 
 gulp.task('templates', function(){
+  var opts = {
+    comments: true,
+    conditionals: true,
+    spare:true
+  };
+
   fs.readFile('./README.md', {encoding: 'utf-8', flag: 'rs'}, function(e, data) {
     if (e) {
       return console.log(e);
@@ -125,6 +131,7 @@ gulp.task('templates', function(){
     gulp.src(['index-tpl.html'])
       .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
       .pipe($.rename({basename: 'index'}))
+      .pipe($.minifyHtml(opts))
       .pipe(gulp.dest('./'))
       .pipe($.size());
   });
