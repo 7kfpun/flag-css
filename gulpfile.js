@@ -135,7 +135,7 @@ gulp.task('html', function(){
     if (e) {
       return console.log(e);
     }
-    gulp.src(['*.tpl'])
+    gulp.src(['*.tpl.html'])
       .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
       .pipe($.rename({extname: '.html'}))
       .pipe($.minifyHtml(opts))
