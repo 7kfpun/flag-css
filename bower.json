@@ -18,7 +18,7 @@
   "license": ["MIT"],
   "repository": {
     "type": "git",
-    "url": "git://github.com/7kfpun/flag-css.git"
+    "url": "https://github.com/7kfpun/flag-css.git"
   },
   "main": [
     "./dist/flag-css.css"

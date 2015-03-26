@@ -1,11 +1,12 @@
 {
-  "name": "app",
+  "name": "flag-css",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/7kfpun/flag-css.git"
   },
-  "description": "Flag-css ui packages.",
+  "license": ["MIT"],
+  "description": "CSS for SVG country flags with PNG fallback.",
   "dependencies": {},
   "devDependencies": {
     "chalk": "^0.5.1",
