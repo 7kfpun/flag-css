@@ -20,9 +20,9 @@
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
 /* using in flag-core.scss */
-$flag-width: 1.333333333333em;
-$flag-line-height: 1em;
+$flag-width: 1.333333333333em !default;
+$flag-line-height: 1em !default;
 
 /* using in flag-list */
-$flag-css-path: '../flags';
-$flag-css-png-path: '../flags/png';
+$flag-css-path: '../flags' !default;
+$flag-css-png-path: '../flags/png' !default;
