@@ -16,7 +16,7 @@
     "gulp-cssmin": "^0.1.6",
     "gulp-data": "^1.2.0",
     "gulp-download": "0.0.1",
-    "gulp-filter": "^2.0.2",
+    "gulp-filter": "^3.0.1",
     "gulp-gm": "0.0.7",
     "gulp-imagemin": "^2.2.1",
     "gulp-less": "^3.0.2",

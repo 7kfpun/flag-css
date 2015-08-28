@@ -96,8 +96,13 @@ gulp.task('css-min', function() {
 });
 
 gulp.task('scss',function(){
+  var variableFilter = $.filter('**/variable.scss', {restore: true});
+
   gulp.src('./less/**/*.less')
   .pipe($.lessToScss())
+  .pipe(variableFilter)
+  .pipe($.replace(';', ' !default;'))
+  .pipe(variableFilter.restore)
   .pipe(gulp.dest('./dist/scss'))
   .pipe($.size());
 });
