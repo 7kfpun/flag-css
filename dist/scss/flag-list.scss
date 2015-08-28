@@ -19,11 +19,6 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
-.flag-eur, .flag-eu {
-  background-image: unquote("url(#{$flag-css-png-path}/eur.png)");
-  background-image: unquote("url(#{$flag-css-path}/eur.svg)");
-}
-
 @mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) when ($ioc = null) and ($fifa = null){
   .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric} {
     background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
@@ -51,7 +46,6 @@
     background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
   }
 }
-
 
 @include flag(abw, aw, 533, aru, aru);
 @include flag(afg, af, 4, afg, afg);
@@ -281,7 +275,7 @@
 @include flag(tun, tn, 788, tun, tun);
 @include flag(tur, tr, 792, tur, tur);
 @include flag(tuv, tv, 798, tuv, tuv);
-@include flag(twn, tw, 158, tpe, tpe);
+@include flag(twn, tw, 158, null, null);
 @include flag(tza, tz, 834, tan, tan);
 @include flag(uga, ug, 800, uga, uga);
 @include flag(ukr, ua, 804, ukr, ukr);
@@ -302,3 +296,39 @@
 @include flag(zaf, za, 710, rsa, rsa);
 @include flag(zmb, zm, 894, zam, zam);
 @include flag(zwe, zw, 716, zim, zim);
+
+// Exceptions
+.flag-fifa-eng {
+  background-image: unquote("url(#{$flag-css-png-path}/eng.png)");
+  background-image: unquote("url(#{$flag-css-path}/eng.svg)");
+}
+
+.flag-eur, .flag-eu {
+  background-image: unquote("url(#{$flag-css-png-path}/eur.png)");
+  background-image: unquote("url(#{$flag-css-path}/eur.svg)");
+}
+
+.flag-ioc-kos {
+  background-image: unquote("url(#{$flag-css-png-path}/kos.png)");
+  background-image: unquote("url(#{$flag-css-path}/kos.svg)");
+}
+
+.flag-fifa-nir {
+  background-image: unquote("url(#{$flag-css-png-path}/nir.png)");
+  background-image: unquote("url(#{$flag-css-path}/nir.svg)");
+}
+
+.flag-ico-tpe, .flag-fifa-tpe {
+  background-image: unquote("url(#{$flag-css-png-path}/tpe.png)");
+  background-image: unquote("url(#{$flag-css-path}/tpe.svg)");
+}
+
+.flag-fifa-sco {
+  background-image: unquote("url(#{$flag-css-png-path}/sco.png)");
+  background-image: unquote("url(#{$flag-css-path}/sco.svg)");
+}
+
+.flag-fifa-wal {
+  blackground-image: unquote("url(#{$flag-css-png-path}/wal.png)");
+  background-image: unquote("url(#{$flag-css-path}/wal.svg)");
+}

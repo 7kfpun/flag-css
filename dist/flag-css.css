@@ -115,11 +115,6 @@
 :root .flag-flip-vertical {
   filter: none;
 }
-.flag-eur,
-.flag-eu {
-  background-image: url(../flags/png/eur.png);
-  background-image: url(../flags/eur.svg);
-}
 .flag-abw,
 .flag-aw,
 .flag-533,
@@ -1913,9 +1908,7 @@
 }
 .flag-twn,
 .flag-tw,
-.flag-158,
-.flag-ioc-tpe,
-.flag-fifa-tpe {
+.flag-158 {
   background-image: url(../flags/png/twn.png);
   background-image: url(../flags/twn.svg);
 }
@@ -2075,4 +2068,34 @@
 .flag-fifa-zim {
   background-image: url(../flags/png/zwe.png);
   background-image: url(../flags/zwe.svg);
+}
+.flag-fifa-eng {
+  background-image: url(../flags/png/eng.png);
+  background-image: url(../flags/eng.svg);
+}
+.flag-eur,
+.flag-eu {
+  background-image: url(../flags/png/eur.png);
+  background-image: url(../flags/eur.svg);
+}
+.flag-ioc-kos {
+  background-image: url(../flags/png/kos.png);
+  background-image: url(../flags/kos.svg);
+}
+.flag-fifa-nir {
+  background-image: url(../flags/png/nir.png);
+  background-image: url(../flags/nir.svg);
+}
+.flag-ico-tpe,
+.flag-fifa-tpe {
+  background-image: url(../flags/png/tpe.png);
+  background-image: url(../flags/tpe.svg);
+}
+.flag-fifa-sco {
+  background-image: url(../flags/png/sco.png);
+  background-image: url(../flags/sco.svg);
+}
+.flag-fifa-wal {
+  blackground-image: url(../flags/png/wal.png);
+  background-image: url(../flags/wal.svg);
 }
