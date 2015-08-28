@@ -131,10 +131,10 @@ gulp.task('zip', ['zip-png', 'zip-nopng']);
 
 gulp.task('html', function() {
   var opts = {
-    comments: true,
     conditionals: true,
-    spare:true
+    spare: true
   };
+  var htmlFilter = $.filter('!*.tpl.html', {restore: true});
 
   fs.readFile('./README.md', {encoding: 'utf-8', flag: 'rs'}, function(e, data) {
     if (e) {
@@ -142,8 +142,9 @@ gulp.task('html', function() {
     }
     gulp.src(['*.tpl.html'])
       .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
-      .pipe($.rename({extname: '.html'}))
-      .pipe($.filter('!*.tpl.html'))
+      .pipe($.rename(function(path) {
+        path.basename = path.basename.replace('.tpl', '');
+      }))
       .pipe($.minifyHtml(opts))
       .pipe(gulp.dest('./'))
       .pipe($.size());
