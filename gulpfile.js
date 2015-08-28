@@ -52,15 +52,17 @@ gulp.task('svg2png', function() {
 
 gulp.task('svg2png-small', function() {
   return gulp.src(path.src.svg)
-  .pipe($.newer({
-    dest: path.dest.flags.png,
-    ext: '.png'
-  }))
+  .pipe($.filter('**/*.svg'))
+  // .pipe($.newer({
+  //   dest: path.dest.flags.png,
+  //   ext: '.png'
+  // }))
   .pipe($.svg2png())
   .pipe($.gm(function (gmfile) {
     return gmfile.resize(150);
   }))
   // .pipe($.rename({suffix: '-100px'}))
+  .pipe($.flatten())
   .pipe(gulp.dest(path.dest.flags.png))
   .pipe($.size());
 });
@@ -95,7 +97,7 @@ gulp.task('css-min', function() {
   .pipe($.size());
 });
 
-gulp.task('scss',function(){
+gulp.task('scss',function() {
   var variableFilter = $.filter('**/variable.scss', {restore: true});
 
   gulp.src('./less/**/*.less')

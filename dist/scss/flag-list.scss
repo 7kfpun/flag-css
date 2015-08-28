@@ -329,6 +329,6 @@
 }
 
 .flag-fifa-wal {
-  blackground-image: unquote("url(#{$flag-css-png-path}/wal.png)");
+  background-image: unquote("url(#{$flag-css-png-path}/wal.png)");
   background-image: unquote("url(#{$flag-css-path}/wal.svg)");
 }

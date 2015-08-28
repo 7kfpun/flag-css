@@ -19,7 +19,7 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
 ## Usage
 
 For using the flags inline with text add the classes `.flag` with `.flag-xxx` or `.flag-xx` (where `xxx` is the
-[ISO 3166-1-alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or [ISO 3166-1-numeric](http://en.wikipedia.org/wiki/ISO_3166-1_numeric) and xx is the [ISO 3166-1-alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of a country) to an empty `<span>`. Example:
+[ISO 3166-1-alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or [ISO 3166-1-numeric](http://en.wikipedia.org/wiki/ISO_3166-1_numeric) and xx is the [ISO 3166-1-alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of a country) to an empty `<span>`. Or using `flag-ioc-xxx` or `flag-fifa-xxx` (where `xxx` either the [IOC](https://en.wikipedia.org/wiki/List_of_IOC_country_codes) or [FIFA](https://en.wikipedia.org/wiki/List_of_FIFA_country_codes) of a country). Example:
 
     <span class="flag flag-hkg"></span>
     <span class="flag flag-hk"></span>
