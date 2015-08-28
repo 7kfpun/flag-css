@@ -6,6 +6,7 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
 
   - All flags from [Wikimedia](http://commons.wikimedia.org/wiki/Category:SVG_sovereign_state_flags)
   - Use [ISO 3166-1](http://en.wikipedia.org/wiki/ISO_3166-1), all alpha-2, alpha-3 and numeric are supported
+  - [IOC](https://en.wikipedia.org/wiki/List_of_IOC_country_codes) and [FIFA](https://en.wikipedia.org/wiki/List_of_FIFA_country_codes) are also supported
   - Respect flag's original ratio
   - Flag-css CSS, LESS, and Sass files are licensed under the MIT License
 
@@ -18,11 +19,13 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
 ## Usage
 
 For using the flags inline with text add the classes `.flag` with `.flag-xxx` or `.flag-xx` (where `xxx` is the
-[ISO 3166-1-alpha-3] or [ISO 3166-1-numeric] and xx is the [ISO 3166-1-alpha-2] of a country) to an empty `<span>`. Example:
+[ISO 3166-1-alpha-3](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or [ISO 3166-1-numeric](http://en.wikipedia.org/wiki/ISO_3166-1_numeric) and xx is the [ISO 3166-1-alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of a country) to an empty `<span>`. Example:
 
     <span class="flag flag-hkg"></span>
     <span class="flag flag-hk"></span>
     <span class="flag flag-344"></span>
+    <span class="flag flag-ioc-hkg"></span>
+    <span class="flag flag-fifa-hkg"></span>
 
 ### Sizing
 
@@ -48,10 +51,6 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
 ## License
 
 MIT
-
-[ISO 3166-1-alpha-3]:http://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
-[ISO 3166-1-alpha-2]:http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-[ISO 3166-1-numeric]:http://en.wikipedia.org/wiki/ISO_3166-1_numeric
 
 ## Development
 

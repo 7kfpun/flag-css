@@ -129,7 +129,7 @@ gulp.task('zip', ['zip-png', 'zip-nopng']);
 
 /////////////////////////////////////////////////////////
 
-gulp.task('html', function(){
+gulp.task('html', function() {
   var opts = {
     comments: true,
     conditionals: true,
@@ -143,6 +143,7 @@ gulp.task('html', function(){
     gulp.src(['*.tpl.html'])
       .pipe($.replace(/__README__/g, data.replace(/\n/g, '\\n').replace(/\"/g, '\\"').replace(/\'/g, '\\\'')))
       .pipe($.rename({extname: '.html'}))
+      .pipe($.filter('!*.tpl.html'))
       .pipe($.minifyHtml(opts))
       .pipe(gulp.dest('./'))
       .pipe($.size());
