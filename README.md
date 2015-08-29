@@ -10,11 +10,16 @@ CSS for SVG country flags with PNG fallback. See the [demo](http://7kfpun.github
   - Respect flag's original ratio
   - Flag-css CSS, LESS, and Sass files are licensed under the MIT License
 
-## install
+## Install
 
     bower:
 
         bower install --save flag-css
+
+## Or download
+
+- [Flag-css (full)](dist/archive.zip)
+- [Flag-css (without .png files)](dist/archive-nopng.zip)
 
 ## Usage
 
@@ -46,8 +51,8 @@ For using the flags inline with text add the classes `.flag` with `.flag-xxx` or
 
 ## Flag list
 
-| Flag                   | Alpha 3 | Alpha 2 | Numeric | IOC | FIFA |
-| ---------------------- |:-------:|:-------:|:-------:|:---:|:----:|
+| Flag                        | Alpha 3 | Alpha 2 | Numeric | IOC | FIFA |
+| --------------------------- |:-------:|:-------:|:-------:|:---:|:----:|
 | ![](dist/flags/png/abw.png) | abw | aw | 533 | aru | aru |
 | ![](dist/flags/png/afg.png) | afg | af | 4 | afg | afg |
 | ![](dist/flags/png/ago.png) | ago | ao | 24 | ang | ang |
