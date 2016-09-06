@@ -1,7 +1,7 @@
 {
   "name": "flag-css",
   "description": "CSS for SVG country flags with PNG fallback.",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "authors": [
     "kf <7kfpun@gmail.com>"
   ],
