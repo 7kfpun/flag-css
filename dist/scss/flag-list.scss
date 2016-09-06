@@ -19,31 +19,28 @@
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE
  * OR OTHER DEALINGS IN THE SOFTWARE.
  */
-@mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) when ($ioc = null) and ($fifa = null){
-  .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric} {
-    background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
-    background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+@mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) {
+  @if $ioc = null and $fifa = null {
+    .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric} {
+      background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
+      background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+    }
   }
-}
-
-@mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) when not($ioc = null) and ($fifa = null){
-  .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-ioc-#{$ioc}  {
-    background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
-    background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
-  }
-}
-
-@mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) when ($ioc = null) and not($fifa = null){
-  .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-fifa-#{$fifa} {
-    background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
-    background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
-  }
-}
-
-@mixin flag($alpha3, $alpha2, $numeric, $ioc: null, $fifa: null) when not($ioc = null) and not($fifa = null){
-  .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-ioc-#{$ioc}, .flag-fifa-#{$fifa} {
-    background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
-    background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+  @else if $ioc != null and $fifa = null {
+    .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-ioc-#{$ioc} {
+      background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
+      background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+    }
+  } @else if $ioc = null and $fifa = null {
+    .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-fifa-#{$fifa} {
+      background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
+      background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+    }
+  } @else {
+    .flag-#{$alpha3}, .flag-#{$alpha2}, .flag-#{$numeric}, .flag-ioc-#{$ioc}, .flag-fifa-#{$fifa} {
+      background-image: unquote("url(#{$flag-css-png-path}/#{$alpha3}.png)");
+      background-image: unquote("url(#{$flag-css-path}/#{$alpha3}.svg)");
+    }
   }
 }
 
