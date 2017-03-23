@@ -1,8 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="450" height="300" viewBox="0 0 1200 800"><title>Flag of the Central African Republic</title>
-<rect height="200" width="1200" y="0" x="0" fill="#003082"/>
-<rect height="200" width="1200" y="200" x="0" fill="#FFF"/>
-<rect height="200" width="1200" y="400" x="0" fill="#289728"/>
-<rect height="200" width="1200" y="600" x="0" fill="#FFCE00"/>
-<rect height="800" width="200" y="0" x="500" fill="#D21034"/>
-<polygon fill="#FFCE00" points="0,-1,0.22451,-0.30902,0.95106,-0.30902,0.36327,0.11803,0.58779,0.80902,0,0.38197,-0.58779,0.80902,-0.36327,0.11803,-0.95106,-0.30902,-0.22451,-0.30902" transform="translate(200,108.59425) scale(90)"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="450" height="300" viewBox="0 0 1200 800"><title>Flag of the Central African Republic</title><path fill="#003082" d="M0 0h1200v200H0z"/><path fill="#FFF" d="M0 200h1200v200H0z"/><path fill="#289728" d="M0 400h1200v200H0z"/><path fill="#FFCE00" d="M0 600h1200v200H0z"/><path fill="#D21034" d="M500 0h200v800H500z"/><path fill="#FFCE00" d="M200 18.594l20.206 62.188h65.39l-52.902 38.435 20.207 62.189L200 142.972l-52.901 38.434 20.207-62.19-52.901-38.434h65.39z"/></svg>
