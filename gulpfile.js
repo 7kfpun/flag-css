@@ -30,6 +30,7 @@ gulp.task('svg', function() {
     if (url) {
       $.download(url)
         .pipe($.rename({basename: key}))
+        .pipe($.imagemin())
         .pipe(gulp.dest(path.dest.flags.svg))
         .pipe($.size());
     }
