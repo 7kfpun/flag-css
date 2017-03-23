@@ -43,9 +43,7 @@ gulp.task('svg2png', function() {
     ext: '.png'
   }))
   .pipe($.svg2png())
-  // .pipe($.imagemin({
-  //   use: [$.pngquant()]
-  // }))
+  .pipe($.imagemin())
   .pipe(gulp.dest(path.dest.flags.png))
   .pipe($.size());
 });
@@ -58,6 +56,7 @@ gulp.task('svg2png-small', function() {
   //   ext: '.png'
   // }))
   .pipe($.svg2png())
+  .pipe($.imagemin())
   .pipe($.gm(function (gmfile) {
     return gmfile.resize(150);
   }))
