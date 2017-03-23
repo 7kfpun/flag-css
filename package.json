@@ -9,8 +9,7 @@
     "MIT"
   ],
   "description": "CSS for SVG country flags with PNG fallback.",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chalk": "^0.5.1",
     "del": "^1.1.1",
@@ -22,7 +21,7 @@
     "gulp-filter": "^3.0.1",
     "gulp-flatten": "^0.2.0",
     "gulp-gm": "0.0.7",
-    "gulp-imagemin": "^2.2.1",
+    "gulp-imagemin": "2.4.0",
     "gulp-less": "^3.0.2",
     "gulp-less-to-scss": "0.0.4",
     "gulp-license": "^1.0.0",
