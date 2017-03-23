@@ -1,6 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="990" height="630">
-<rect id="blue" width="990" height="630" fill="#4891d9"/>
-<rect id="black" width="990" height="420" y="210" fill="#000"/>
-<rect id="white" width="990" height="210" y="420" fill="#fff"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="990" height="630" viewBox="0 0 33 21"><path fill="#FFF" d="M0 0h33v21H0z"/><path d="M0 0h33v14H0z"/><path fill="#0072ce" d="M0 0h33v7H0z"/></svg>
