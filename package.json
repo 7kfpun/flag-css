@@ -5,9 +5,7 @@
     "type": "git",
     "url": "https://github.com/7kfpun/flag-css.git"
   },
-  "license": [
-    "MIT"
-  ],
+  "license": "MIT",
   "description": "CSS for SVG country flags with PNG fallback.",
   "dependencies": {},
   "devDependencies": {
