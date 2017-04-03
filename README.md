@@ -20,8 +20,7 @@ CSS for SVG country flag icons with PNG fallback (all alpha-2, alpha-3, numeric,
 
 ## Or download
 
-- [Flag-css (full)](dist/archive.zip)
-- [Flag-css (without .png files)](dist/archive-nopng.zip)
+- [Flag-css zip](https://github.com/7kfpun/flag-css/releases)
 
 ## Usage
 
