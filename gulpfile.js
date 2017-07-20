@@ -1,7 +1,8 @@
 'use strict';
 
-var gulp = require('gulp');
+var exec = require('child_process').exec;
 var fs = require('fs');
+var gulp = require('gulp');
 
 
 var $ = require('gulp-load-plugins')({
@@ -36,11 +37,12 @@ gulp.task('svg-download', function() {
   });
 });
 
-gulp.task('svg-min', function() {
-  return gulp.src(path.src.svg)
-  .pipe($.imagemin())
-  .pipe(gulp.dest(path.dest.flags.svg))
-  .pipe($.size());
+gulp.task('svg-min', function(cb) {
+  exec(`./node_modules/svgo/bin/svgo -f ${path.dest.flags.svg}`, function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
 });
 
 gulp.task('svg2png', function() {
