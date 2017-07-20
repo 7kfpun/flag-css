@@ -92,7 +92,7 @@ gulp.task('css', function() {
   gulp.src('./less/**/flag-css.less')
   .pipe($.less({}))
   .pipe($.stripCssComments())
-  .pipe(gulp.dest('./dist/'))
+  .pipe(gulp.dest('./dist/css'))
   .pipe($.size());
 });
 
