@@ -4,6 +4,12 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 var gulp = require('gulp');
 
+var AWS = {
+  "key":    process.env.AWS_ACCESS_KEY_ID,
+  "secret": process.env.AWS_SECRET_ACCESS_KEY,
+  "bucket": "flag-css",
+  "region": "us-west-2"
+}
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'del', 'imagemin-*']
@@ -190,4 +196,9 @@ gulp.task('run', function() {
     // directoryListing: true,
     open: true
   }));
+});
+
+gulp.task('s3', () => {
+  gulp.src('./dist/**')
+    .pipe($.s3(AWS));
 });
